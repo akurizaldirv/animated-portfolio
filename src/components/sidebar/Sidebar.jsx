@@ -1,4 +1,4 @@
-import "./Sidebar.scss";
+import "./sidebar.scss";
 import Links from "./Links";
 import { useState } from "react";
 import { motion } from "framer-motion";
