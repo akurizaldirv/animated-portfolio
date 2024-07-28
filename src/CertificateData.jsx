@@ -1,6 +1,6 @@
-const CertificateData [
+const CertificateData = [
     {
-        title: "",s
+        title: "",
         src: "sertif/"
     }
 ]

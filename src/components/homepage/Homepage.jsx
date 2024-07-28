@@ -52,7 +52,7 @@ const Homepage = () => {
             x: 0,
         },
         animate: {
-            x: "-220%",
+            x: "-330%",
             transition: {
                 repeat: Infinity,
                 repeatType: "mirror",
@@ -104,7 +104,7 @@ const Homepage = () => {
                         Rizaldi Irvana
                     </motion.h2>
                     <motion.h1 variants={textVariants}>
-                        Web Developer and Designer
+                        Software Engineer and Designer
                     </motion.h1>
                     <motion.div className="buttons" variants={textVariants}>
                         <motion.button
@@ -134,7 +134,7 @@ const Homepage = () => {
                 initial="initial"
                 animate="animate"
             >
-                WEB - DESIGN -WEB
+                CODE - DESIGN - CODE - DESIGN - CODE
             </motion.div>
             <motion.div
                 className="imageContainer"

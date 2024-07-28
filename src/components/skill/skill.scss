@@ -8,13 +8,17 @@
     .wrapper {
         height: 100%;
         width: 100%;
-        max-width: 880px;
+        max-width: 840px;
         margin: auto;
         display: flex;
         flex-direction: column;
         justify-content: center;
         padding: 100px 20px;
         gap: 20px;
+
+        @include tablet {
+            max-width: 640px;
+        }
 
         .skillSection {
             h1 {

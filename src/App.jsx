@@ -9,7 +9,7 @@ import "slick-carousel/slick/slick-theme.css";
 const App = () => {
     return (
         <Router>
-            <Sidebar />
+            {/* <Sidebar /> */}
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/projects" element={<Projects />} />

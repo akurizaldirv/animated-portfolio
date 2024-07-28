@@ -3,140 +3,177 @@
 
 .projects {
     width: 100%;
-    background-color: $c2;
+    background-image: url("../../../public/assets/desert.jpg");
+    background-size: cover;
+    background-position-x: center;
+    background-attachment: fixed;
+    position: relative;
     margin: auto;
 
-    .wrapper {
-        margin: auto;
-        width: 100%;
-        max-width: 1080px;
-        height: 100%;
-        padding: 50px 10px;
+    .inner {
+        position: relative;
+        z-index: 2;
+        background: linear-gradient(135deg, #350028, #35002850, #350028);
 
-        @include mobile {
-            padding: 50px 20px;
-        }
-
-        @include tablet {
-            padding: 50px 20px;
-        }
-
-        .title {
-            text-align: center;
-
-            h1 {
-                font-weight: 600;
-                font-size: 32px;
-                color: orange;
-
-                @include mobile {
-                    font-size: 24px;
-                }
-            }
-
-            p {
-                margin-bottom: 30px;
-                font-size: 24px;
-
-                @include mobile {
-                    font-size: 18px;
-                }
-            }
-        }
-
-        .cards {
-            display: grid;
-            grid-template-columns: auto auto auto;
-            gap: 30px;
-
-            @include tablet {
-                grid-template-columns: auto auto;
-            }
+        .wrapper {
+            margin: auto;
+            width: 100%;
+            max-width: 1080px;
+            min-height: 100vh;
+            height: 100%;
+            padding: 50px 10px;
 
             @include mobile {
-                grid-template-columns: auto;
+                padding: 50px 20px;
             }
 
-            .item {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                padding: 15px;
-                border: 1px solid $c4;
-                border-radius: 5px;
-                box-shadow: 0px 10px 10px 3px $c3;
+            @include tablet {
+                padding: 50px 20px;
+            }
 
-                .imageContainer {
-                    img {
-                        width: 100%;
-                        height: 100%;
-                        border-radius: 5px;
-                    }
-                }
+            .title {
+                text-align: center;
 
-                .textContainer {
-                    text-align: center;
-                    width: auto;
-                    display: flex;
-                    margin-top: 10px;
-                    flex-direction: column;
-                    gap: 10px;
-
-                    h2 {
-                        font-size: 24px;
-                        font-weight: 700;
-
-                        @include mobile {
-                            font-size: 18px;
-                        }
-                    }
-
-                    .tech {
-                        display: flex;
-                        gap: 10px;
-                        justify-content: center;
-                        align-items: center;
-
-                        span {
-                            border-radius: 5px;
-                            border: 1px solid orange;
-                            padding: 3px 10px;
-
-                            @include mobile {
-                                font-size: 14px;
-                            }
-                        }
-                    }
+                h1 {
+                    font-weight: 600;
+                    font-size: 32px;
+                    color: orange;
 
                     @include mobile {
-                        p {
-                            font-size: 16px;
-                        }
-                    }
-
-                    .buttons {
-                        button {
-                            padding: 10px 15px;
-                            border: 1px solid $c4;
-                            border-radius: 5px;
-                            font-weight: 300;
-                            font-size: 15px;
-                            margin-right: 10px;
-                            color: white;
-                            letter-spacing: 1px;
-
-                            @include mobile {
-                                font-size: 14px;
-                            }
-
-                            svg {
-                                margin-left: 5px;
-                            }
-                        }
+                        font-size: 24px;
                     }
                 }
             }
+
+            .filter-container {
+                display: flex;
+                justify-content: center;
+                margin: 15px 0 25px 0;
+            }
+
+            .filter-button {
+                border: 1px solid orange;
+                color: white;
+                background: transparent;
+                margin: 5px 5px;
+                border-radius: 5px;
+                padding: 5px 10px;
+                cursor: pointer;
+                transition: all 0.2s ease-in-out;
+            }
+
+            .filter-button:hover {
+                box-shadow: 2px 2px 5px 1px white;
+            }
+
+            .filter-active {
+                background-color: orange;
+                color: #350028;
+                font-weight: 500;
+            }
+
+            .cards {
+                display: grid;
+                grid-template-columns: auto auto auto;
+                gap: 30px;
+
+                @include tablet {
+                    grid-template-columns: auto auto;
+                }
+
+                @include mobile {
+                    grid-template-columns: auto;
+                }
+
+                .item:hover {
+                    box-shadow: 0px 5px 1px white;
+                }
+
+                .item {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    gap: 15px;
+                    align-items: center;
+                    padding: 15px;
+                    border: 1px solid $c4;
+                    border-radius: 5px;
+                    backdrop-filter: blur(5px);
+                    transition: all .1s ease-in-out;
+
+                    .imageContainer {
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 5px;
+                        }
+                    }
+
+                    .textContainer {
+                        text-align: center;
+                        width: auto;
+                        display: flex;
+                        margin-top: 10px;
+                        flex-direction: column;
+                        gap: 10px;
+
+                        h2 {
+                            font-size: 24px;
+                            font-weight: 700;
+
+                            @include mobile {
+                                font-size: 18px;
+                            }
+                        }
+
+                        .tech {
+                            display: flex;
+                            gap: 10px;
+                            justify-content: center;
+                            align-items: center;
+
+                            span {
+                                border-radius: 5px;
+                                border: 1px solid orange;
+                                padding: 3px 10px;
+
+                                @include mobile {
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+
+                        @include mobile {
+                            p {
+                                font-size: 16px;
+                            }
+                        }
+
+                        
+                    }
+                }
+            }
+        }
+    }
+}
+
+.buttons {
+    button {
+        padding: 10px 15px;
+        border: 1px solid $c4;
+        border-radius: 5px;
+        font-weight: 300;
+        font-size: 15px;
+        margin-right: 10px;
+        color: white;
+        letter-spacing: 1px;
+
+        @include mobile {
+            font-size: 14px;
+        }
+
+        svg {
+            margin-left: 5px;
         }
     }
 }

@@ -22,7 +22,7 @@
             height: 75px;
             width: 100%;
             bottom: 10px;
-            right: 0;
+            left: 0;
         }
 
         @include mobile {
@@ -30,7 +30,7 @@
             height: 50px;
             width: 100%;
             bottom: 10px;
-            right: 0;
+            left: 0;
         }
 
         a {
@@ -39,15 +39,27 @@
             border-radius: 50%;
             background-color: orange;
             padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
             @include tablet {
                 width: 60px;
                 height: 60px;
             }
 
+            @include mobile {
+                width: 48px;
+                height: 48px;
+            }
+
             .iconSosmed {
                 color: white;
                 font-size: 30px;
+
+                @include tablet {
+                    font-size: 36px;
+                }
             }
         }
     }
@@ -61,12 +73,13 @@
         display: flex;
         flex-direction: row;
 
-        @include mobile {
-            width: 90%;
+        @include tablet {
+            width: 100%;
             flex-direction: column;
         }
-        @include tablet {
-            width: 90%;
+
+        @include mobile {
+            width: 100%;
             flex-direction: column;
         }
 
@@ -78,18 +91,22 @@
             width: 50%;
             gap: 10px;
 
-            @include mobile {
-                height: 50%;
-                width: 100%;
-                text-align: center;
-                padding-top: 100px;
-            }
-
             @include tablet {
                 height: 50%;
                 width: 100%;
                 text-align: center;
                 padding-top: 100px;
+                justify-content: start;
+            }
+
+            @include mobile {
+                height: 50%;
+                width: 100%;
+                text-align: center;
+                margin-top: auto;
+                margin-bottom: 10vh;
+                justify-content: end;
+                padding-bottom: 5vh;
             }
 
             h2 {
@@ -97,12 +114,14 @@
                 font-weight: 800;
                 font-size: 32px;
 
-                @include mobile {
-                    font-size: 24px;
-                }
-
                 @include tablet {
                     font-size: 52px;
+                    line-height: 24px;
+                }
+
+                @include mobile {
+                    font-size: 24px;
+                    line-height: 12px;
                 }
             }
 
@@ -110,12 +129,15 @@
                 font-size: 64px;
                 font-weight: 700;
 
-                @include mobile {
-                    font-size: 48px;
-                }
-                
                 @include tablet {
                     font-size: 72px;
+                    line-height: 68px;
+                    margin: 2vh 0;
+                }
+
+                @include mobile {
+                    line-height: 32px;
+                    font-size: 32px;
                 }
             }
 
@@ -136,6 +158,11 @@
                         font-size: 24px;
                         padding: 25px;
                     }
+
+                    @include tablet {
+                        font-size: 16px;
+                        padding: 14px 20px;
+                    }
                 }
             }
 
@@ -143,15 +170,8 @@
                 margin-top: 10px;
                 width: 50px;
 
-                @include mobile {
-                    margin-top: 0;
-                    margin: auto;
-                }
-
                 @include tablet {
-                    margin-top: 0;
-                    margin: auto;
-                    width: 75px;
+                    display: none;
                 }
             }
         }
@@ -167,9 +187,12 @@
         width: 50%;
 
         // no select
-        -webkit-user-select: none; /* Safari */
-        -ms-user-select: none; /* IE 10 and IE 11 */
-        user-select: none; /* Standard syntax */
+        -webkit-user-select: none;
+        /* Safari */
+        -ms-user-select: none;
+        /* IE 10 and IE 11 */
+        user-select: none;
+        /* Standard syntax */
     }
 
     .imageContainer {
@@ -180,39 +203,39 @@
         width: 60vh;
         text-align: center;
 
-        @include mobile {
-            right: 0;
-            height: 50%;
-            width: 100%;
-            top: auto;
-            bottom: 0;
-        }
-
+        
         @include tablet {
             height: 50%;
             width: 100%;
             top: auto;
             right: auto;
-            bottom: 0;
+            bottom: 10vh;
             padding-top: auto;
         }
 
+        @include mobile {
+            right: 0;
+            height: 50%;
+            width: 100%;
+            bottom: auto;
+            top: 10vh;
+        }
+        
         img {
             border-radius: 50% 50% 0 0;
-            // width: 300px;
             width: 100%;
             object-fit: cover;
             transform: scaleX(-1);
 
-            @include tablet {   
+            @include tablet {
                 width: 60%;
                 margin: auto;
             }
 
             @include mobile {
-                position: absolute;
+                width: 75%;
                 bottom: 0;
-                left: 0;
+                margin: auto;
             }
         }
     }

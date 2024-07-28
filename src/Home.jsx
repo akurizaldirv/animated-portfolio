@@ -8,10 +8,12 @@ import Portofolio from "./components/portfolio/Portofolio";
 import Design from "./components/skill/Design";
 import Programming from "./components/skill/Programming";
 import Certification from "./components/certification/Certification";
+import Sidebar from "./components/sidebar/Sidebar";
 
 const Home = () => {
     return (
         <div>
+            <Sidebar />
             <section id="Homepage">
                 <Homepage />
             </section>

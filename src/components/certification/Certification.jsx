@@ -9,30 +9,35 @@ import { motion } from "framer-motion";
 import slides from "./data";
 
 const Certification = () => {
-    const [index, setIndex] = useState(-1);
+	const [index, setIndex] = useState(-1);
 
-    console.log(slides)
-    return (
-        <div className="certification">
-            <h2> <span>Certificate</span> Obtained </h2>
-            <hr />
-            <motion.div className="album">
-                <PhotoAlbum
-                    layout="rows"
-                    photos={slides}
-                    targetRowHeight="100"
-                    onClick={({ index: current }) => setIndex(current)}
-                />
-            </motion.div>
+	console.log(slides);
+	return (
+		<div className="certification">
+			<div className="wrapper">
+				<h2>
+					{" "}
+					<span>Certificate</span> Obtained{" "}
+				</h2>
+				<hr />
+				<motion.div className="album">
+					<PhotoAlbum
+						layout="rows"
+						photos={slides}
+						targetRowHeight="100"
+						onClick={({ index: current }) => setIndex(current)}
+					/>
+				</motion.div>
 
-            <Lightbox
-                index={index}
-                slides={slides}
-                open={index >= 0}
-                close={() => setIndex(-1)}
-            />
-        </div>
-    );
+				<Lightbox
+					index={index}
+					slides={slides}
+					open={index >= 0}
+					close={() => setIndex(-1)}
+				/>
+			</div>
+		</div>
+	);
 };
 
 export default Certification;
